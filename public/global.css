@@ -1,0 +1,249 @@
+:root {
+	--maximum-purple: #744276;
+  --english-violet: #4E2D62;
+	--onyx: #333; /* #2D3334; */
+	--white: #fff;
+	--white-darker: rgba(255,255,255,.95);
+	--primary: var(--english-violet);
+	--secondary: var(--maximum-purple);
+	--text: var(--onyx);
+	--black: var(--onyx);
+	--black-lighter: rgba(51,51,51,.95);
+}
+
+/*----- Navigation -----*/
+.navigation {
+	color: var(--white);
+	padding: 0.5rem;
+	background: var(--maximum-purple);
+	border-bottom: .1rem solid var(--english-violet);
+	display: block;
+	left: 0;
+	max-width: 100%;
+	width: 100%;
+	/* position: fixed; */
+	right: 0;
+	top: 0;
+	z-index: 2;
+}
+
+.navigation .container {
+	margin: 0 auto;
+	padding: 0 2.0rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.container {
+	/* width: 100%;
+	max-width: 112rem; */
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-top: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.navigation .title {
+	font-size: 1.6rem;
+	line-height: 5.2rem;
+	padding: 0;
+	text-decoration: none;
+	color: var(--white);
+	font-family: Gotham Rounded A,Gotham Rounded B,Helvetica Neue,Arial,sans-serif;
+}
+
+.navigation .navigation-items {
+	list-style: none;
+	margin-top: 0;
+	margin-bottom: 0;
+	display: inline-block;
+}
+
+.navigation .navigation-item {
+	margin-bottom: 0;
+	margin-left: 2.5rem;
+}
+
+.navigation-item a {
+	color: var(--white-darker);
+	text-decoration: none;
+}
+.navigation-item a:hover {
+	color: var(--white);
+	text-decoration: none;
+}
+
+
+/*----- Cards -----*/
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: var(--white);
+	background-clip: border-box;
+	border: 1px solid var(--black);
+	border-radius: .25rem;
+}
+
+.card-title {
+	display: inline-block;
+	margin-top: 0;
+}
+
+.price {
+	float: right;
+}
+
+.card-wrapper {
+	flex: 0 0 33.333333%;
+	max-width: 33.333333%;
+	padding: .5rem;
+	box-sizing: border-box;
+}
+
+.card-img, .card-img-top {
+	border-top-left-radius: calc(.25rem - 1px);
+	border-top-right-radius: calc(.25rem - 1px);
+}
+.card-img, .card-img-bottom, .card-img-top {
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	width: 100%;
+}
+img {
+	vertical-align: middle;
+	border-style: none;
+}
+
+.card-body {
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	min-height: 1px;
+	padding: 1.25rem;
+}
+
+.row {
+	display: flex;
+}
+
+.item-cart-indicator {
+	margin-left: .5rem;
+}
+
+/*----- Buttons -----*/
+button, input[type='button'], input[type='reset'], input[type='submit'] {
+	background-color: var(--primary);
+	border: 0.1rem solid var(--primary);
+	border-radius: .4rem;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 700;
+	letter-spacing: .1rem;
+	line-height: 2.8rem;
+	padding: 0 2rem;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+button.button-outline, input[type='button'].button-outline, input[type='reset'].button-outline, input[type='submit'].button-outline {
+	background-color: transparent;
+	color: var(--primary);
+}
+
+button:hover, input[type='button']:hover, input[type='reset']:hover, input[type='submit']:hover {
+	background-color: var(--secondary);
+	border-color: var(--secondary);
+	text-decoration: none;
+}
+button.button-outline:hover, input[type='button'].button-outline:hover, input[type='reset'].button-outline:hover, input[type='submit'].button-outline:hover {
+	background-color: transparent;
+	color: var(--secondary);
+}
+
+
+/*----- Cart -----*/
+.img-thumbnail {
+	height: 100px;
+	width: 80px;
+	object-fit: cover;
+}
+
+table {
+	width: 100%;
+}
+
+
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	color: var(--text);
+	margin: 0;
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+a {
+	color: var(--primary);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: var(--secondary);
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+label {
+	display: block;
+}
+
+input, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	-webkit-padding: 0.4em 0;
+	padding: 0.4em;
+	margin: 0 0 0.5em 0;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+input:disabled {
+	color: #ccc;
+}
+
+/* button {
+	color: var(--text);
+	background-color: #f4f4f4;
+	outline: none;
+}
+
+button:disabled {
+	color: #999;
+}
+
+button:not(:disabled):active {
+	background-color: #ddd;
+}
+
+button:focus {
+	border-color: #666;
+} */
