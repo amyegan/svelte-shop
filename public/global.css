@@ -3,7 +3,7 @@
   --english-violet: #4E2D62;
 	--onyx: #333; /* #2D3334; */
 	--white: #fff;
-	--white-darker: rgba(255,255,255,.95);
+	--white-darker: rgba(255,255,255,.85);
 	--primary: var(--english-violet);
 	--secondary: var(--maximum-purple);
 	--text: var(--onyx);
@@ -15,8 +15,8 @@
 .navigation {
 	color: var(--white);
 	padding: 0.5rem;
-	background: var(--maximum-purple);
-	border-bottom: .1rem solid var(--english-violet);
+	background: var(--primary);
+	border-bottom: .1rem solid var(--secondary);
 	display: block;
 	left: 0;
 	max-width: 100%;
@@ -173,11 +173,22 @@ button.button-outline:hover, input[type='button'].button-outline:hover, input[ty
 	height: 100px;
 	width: 80px;
 	object-fit: cover;
+	border: 1px solid var(--black);
+	border-radius: .2rem;
 }
 
 table {
 	width: 100%;
 }
+
+.checkout-review {
+	max-width: 20rem;
+	margin: 3rem auto 1rem;
+	text-align: center;
+	font-weight: 700;
+}
+
+
 
 
 html, body {
