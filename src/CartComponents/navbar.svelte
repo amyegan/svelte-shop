@@ -54,9 +54,3 @@
     </ul>
   </div>
 </nav>
-
-<style>
-  
-
-
-</style>
