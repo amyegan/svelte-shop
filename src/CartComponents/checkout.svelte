@@ -2,6 +2,7 @@
   import { loadScript } from "@paypal/paypal-js";
   import CheckoutItem from "./CheckoutItem.svelte";
   import { cart } from "../Stores/stores.js";
+  let loading = true;
   let checkedOut = false;
   let cartItems = [];
 
@@ -27,6 +28,8 @@
 
   loadScript({ "client-id": "test", "enable-funding": "venmo", "disable-funding": "card" })
     .then((paypal) => {
+      loading = false;
+
       paypal
         .Buttons({
           style: {
@@ -62,7 +65,7 @@
 <div class="container">
   <h1>My Cart</h1>
 
-  <div class="col-sm">
+  <div>
     {#if cartItems.length === 0}
       {#if checkedOut}
         <p class="empty-message">Thank you for shopping with us</p>
@@ -77,6 +80,9 @@
       </table>
       <div class="checkout-review">
         <p>Total: $ {totalPrice}</p>
+        {#if loading}
+          <strong>Loading checkout buttons...</strong> 
+        {/if}
         <div id="paypal-button" />
       </div>
     {/if}
