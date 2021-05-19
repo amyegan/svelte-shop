@@ -21,7 +21,6 @@
     totalPrice = 0;
     cartItems.forEach((item) => {
       const itemSubtotal = Number(item.price) * item.count;
-      console.log("item subtotal", itemSubtotal);
       totalPrice += itemSubtotal;
     });
   }
@@ -30,12 +29,16 @@
     .then((paypal) => {
       paypal
         .Buttons({
+          style: {
+            color: 'white',
+            shape: 'pill'
+          },
           createOrder: function (data, actions) {
             return actions.order.create({
               purchase_units: [
                 {
                   amount: {
-                    value: totalPrice,
+                    value: totalPrice, // update price based on cart total
                   },
                 },
               ],
@@ -44,12 +47,12 @@
           onApprove: function (data, actions) {
             // This function captures the funds from the transaction.
             return actions.order.capture().then(function (details) {
-              // This function shows a transaction success message to your buyer.
+              // This function shows a transaction success message to your buyer
               checkout();
             });
           },
         })
-        .render("#paypal-button");
+        .render("#paypal-button"); // render buttons to a container so we can ctrl layout
     })
     .catch((err) => {
       console.error("Failed to load the PayPal JS SDK script", err);
