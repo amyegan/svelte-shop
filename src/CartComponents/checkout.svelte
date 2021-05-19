@@ -25,7 +25,7 @@
     });
   }
 
-  loadScript({ "client-id": "test" })
+  loadScript({ "client-id": "test", "enable-funding": "venmo", "disable-funding": "card" })
     .then((paypal) => {
       paypal
         .Buttons({
